@@ -16,13 +16,63 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 
-const camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.01, 1000 );
-camera.position.set( 200, 500, 300 );
-camera.lookAt( 0, 0, 0 );
+const camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.01, 500 );
+camera.position.set( -68, 460,96);
+camera.lookAt( 0, 290, 0 );
+// camera.rotation.set(-87.31,-1.75 ,-33.12 )
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color( 0xffffff );
 renderer.render( scene, camera );
+
+
+
+
+
+
+
+
+// const renderer = new THREE.WebGLRenderer();
+// renderer.setSize( window.innerWidth, window.innerHeight );
+// document.body.appendChild( renderer.domElement );
+
+// const scene = new THREE.Scene();
+
+// const camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.01, 500 );
+
+// const controls = new OrbitControls( camera, renderer.domElement );
+
+// //controls.update() must be called after any manual changes to the camera's transform
+// camera.position.set( -68, 460,96 );
+// controls.update();
+
+// function animate() {
+
+// 	requestAnimationFrame( animate );
+
+// 	// required if controls.enableDamping or controls.autoRotate are set to true
+// 	controls.update();
+
+// 	renderer.render( scene, camera );
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // POLE ON THE LEFT
 var geometry1 = new THREE.CylinderGeometry( 0.2, 0.2, 294.022, 64,1 );
@@ -41,45 +91,83 @@ scene.add( cylinder2 );
 
 //WIRE 1
 
-curveRoadNo2 = new THREE.CatmullRomCurve3([
+curveRoadNo1 = new THREE.CatmullRomCurve3([
   new THREE.Vector3( -1.1455622364301234, 293.347158013558, 0.8396915588527918 ),
   new THREE.Vector3( 7.668897353694774, 292.009670998508, 8.695489291101694 ),new THREE.Vector3( 19.421510139247403,291.459028578464,19.16988624818623),new THREE.Vector3( 28.235969727509655, 291.968154568372,27.025683967396617)])
 
-const geometry = new THREE.TubeGeometry( curveRoadNo2, 64, 0.02, 8, false );
+const geometry = new THREE.TubeGeometry( curveRoadNo1, 64, 0.02, 8, false );
 const material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
 const mesh = new THREE.Mesh( geometry, material );
 scene.add( mesh );
 
 //WIRE 2
 
-// curveRoadNo3 = new THREE.CatmullRomCurve3([
-//   new THREE.Vector3( -20, 6, 0.25 ),
-//   new THREE.Vector3( -5, 5, 0.25 ),new THREE.Vector3( 5, 5,0.25 ),new THREE.Vector3( 20, 6,0.25)])
+curveRoadNo2 = new THREE.CatmullRomCurve3([
+  new THREE.Vector3( -0.37054140941472724, 291.440906418797, 0.09223296958953142 ),
+  new THREE.Vector3( 8.419193830399308, 290.50693591184, 7.870228558778763 ),new THREE.Vector3( 17.208929071144667, 289.946033818785,15.648224148899317 ),new THREE.Vector3( 28.92857605702011, 289.777571553903,26.018884927034378)])
 
-// const geometry3 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
-// const material3= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-// const mesh2 = new THREE.Mesh( geometry3, material3 );
-// scene.add( mesh2 );
+const geometry3 = new THREE.TubeGeometry( curveRoadNo2, 64, 0.02, 8, false );
+const material3= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+const mesh2 = new THREE.Mesh( geometry3, material3 );
+scene.add( mesh2 );
 
 //WIRE 3
-// curveRoadNo3 = new THREE.CatmullRomCurve3([
-//   new THREE.Vector3( -20, 6, -0.25 ),
-//   new THREE.Vector3( -5, 5, -0.25 ),new THREE.Vector3( 5, 5,-0.25 ),new THREE.Vector3( 20, 6,-0.25)])
+curveRoadNo3 = new THREE.CatmullRomCurve3([
+  new THREE.Vector3( 0.23527719732373953, 290.913314183378,-0.5837629800662398),
+  new THREE.Vector3(8.85244362265803, 289.845035754284,7.387307329103351),new THREE.Vector3( 20.341998854884878, 289.238167386377,18.01540106907487),new THREE.Vector3( 28.959165279055014, 289.394965760292,25.98647137824446)])
 
-// const geometry4 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
-// const material4= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-// const mesh3 = new THREE.Mesh( geometry4, material4 );
-// scene.add( mesh3 );
+const geometry4 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
+const material4= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+const mesh3 = new THREE.Mesh( geometry4, material4 );
+scene.add( mesh3 );
 
 //WIRE 4
-// curveRoadNo3 = new THREE.CatmullRomCurve3([
-//   new THREE.Vector3( -20, 6, -0.5 ),
-//   new THREE.Vector3( -5, 5, -0.5 ),new THREE.Vector3( 5, 5,-0.5 ),new THREE.Vector3( 20, 6,-0.5)])
+curveRoadNo4 = new THREE.CatmullRomCurve3([
+  new THREE.Vector3( -0.1243802581448108, 290.924396487641,-0.1824424210935831),
+  new THREE.Vector3( 8.597199439944234, 289.644158135097, 7.671712978743017 ),new THREE.Vector3(20.225972370011732,288.868699619755,18.14392017852515),new THREE.Vector3( 28.947552065656055, 288.983800100647,25.998075577430427)])
 
-// const geometry5 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
-// const material5= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-// const mesh4 = new THREE.Mesh( geometry5, material5 );
-// scene.add( mesh4 );
+const geometry5 = new THREE.TubeGeometry( curveRoadNo4, 64, 0.02, 8, false );
+const material5= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+const mesh4 = new THREE.Mesh( geometry5, material5 );
+scene.add( mesh4 );
+
+//WIRE 5
+curveRoadNo5 = new THREE.CatmullRomCurve3([
+  new THREE.Vector3( -0.5631367061869241,290.760297894014,0.6586254192516208),
+  new THREE.Vector3( 8.302457271027379, 289.376124224568, 8.245421359315515 ),new THREE.Vector3(17.168051245855168,288.607719553586,15.83221728913486),new THREE.Vector3(28.988843212253414,288.537620452957,25.94794520828873)])
+
+const geometry6 = new THREE.TubeGeometry( curveRoadNo5, 64, 0.02, 8, false );
+const material6= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+const mesh5 = new THREE.Mesh( geometry6, material6 );
+scene.add( mesh5 );
+
+//WIRE 6
+curveRoadNo6 = new THREE.CatmullRomCurve3([
+  new THREE.Vector3( -0.8786044995067641,290.59892309874,1.0513131599873304),
+  new THREE.Vector3(8.06984540517442,289.123479407451,8.533791529014707),new THREE.Vector3(20.001111948338803,288.120492590558,18.510429348796606),new THREE.Vector3( 28.949561854475178,288.088727316581,25.992907719686627)])
+
+const geometry7 = new THREE.TubeGeometry( curveRoadNo6, 64, 0.02, 8, false );
+const material7= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+const mesh6 = new THREE.Mesh( geometry7, material7 );
+scene.add( mesh6 );
+//WIRE 7
+curveRoadNo7 = new THREE.CatmullRomCurve3([
+  new THREE.Vector3(-0.4276559423888102,293.56095809414,0.17481542006134987),
+  new THREE.Vector3(8.36981468833983,292.253802916903,8.025620579719543),new THREE.Vector3(17.16728531807894,291.699040733546,15.876425748690963),new THREE.Vector3(28.897246157051995,292.126305284202,26.344165958464146)])
+
+const geometry8 = new THREE.TubeGeometry( curveRoadNo7, 64, 0.02, 8, false );
+const material8= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+const mesh7 = new THREE.Mesh( geometry8, material8 );
+scene.add( mesh7 );
+//WIRE 8
+curveRoadNo8 = new THREE.CatmullRomCurve3([
+  new THREE.Vector3( 0.20575016678776592,293.431135957642,-0.41181617975234985),
+  new THREE.Vector3(8.99553593492601,292.359020866827,7.427064970135689),new THREE.Vector3(20.715250287321396,291.776710470395,17.878906498663127),new THREE.Vector3(29.50503605394624,291.974154494837,25.717787647619843)])
+
+const geometry9 = new THREE.TubeGeometry( curveRoadNo8, 64, 0.02, 8, false );
+const material9= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+const mesh8 = new THREE.Mesh( geometry9, material9 );
+scene.add( mesh8 );
 
 renderer.render( scene, camera );
 		</script>
