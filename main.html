@@ -17,7 +17,7 @@ document.body.appendChild( renderer.domElement );
 
 
 const camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.01, 1000 );
-camera.position.set( 10, 15, -27 );
+camera.position.set( 200, 500, 300 );
 camera.lookAt( 0, 0, 0 );
 
 const scene = new THREE.Scene();
@@ -25,25 +25,25 @@ scene.background = new THREE.Color( 0xffffff );
 renderer.render( scene, camera );
 
 // POLE ON THE LEFT
-var geometry1 = new THREE.CylinderGeometry( 0.1, 0.1, 7, 64,1 );
+var geometry1 = new THREE.CylinderGeometry( 0.2, 0.2, 294.022, 64,1 );
 var material1 = new THREE.MeshBasicMaterial( {color: 0x4F2C07} );
 var cylinder1 = new THREE.Mesh( geometry1, material1 );
-cylinder1.position.set(20,3.5,0)
+cylinder1.position.set(0,294.022/2,0)
 scene.add( cylinder1 );
 
 //POLE ON THE RIGHT
 
-var geometry2 = new THREE.CylinderGeometry( 0.1, 0.1, 7, 64,1 );
+var geometry2 = new THREE.CylinderGeometry( 0.2, 0.2, 292.225, 64,1 );
 var material2 = new THREE.MeshBasicMaterial( {color: 0x4F2C07} );
 var cylinder2 = new THREE.Mesh( geometry2, material2 );
-cylinder2.position.set(-20,3.5,0)
+cylinder2.position.set(28.915000000968575,292.225/2,26.033999998122454)
 scene.add( cylinder2 );
 
 //WIRE 1
 
 curveRoadNo2 = new THREE.CatmullRomCurve3([
-  new THREE.Vector3( -20, 6, 0 ),
-  new THREE.Vector3( -5, 5, 0 ),new THREE.Vector3( 5, 5,0 ),new THREE.Vector3( 20, 6,0)])
+  new THREE.Vector3( -1.1455622364301234, 293.347158013558, 0.8396915588527918 ),
+  new THREE.Vector3( 7.668897353694774, 292.009670998508, 8.695489291101694 ),new THREE.Vector3( 19.421510139247403,291.459028578464,19.16988624818623),new THREE.Vector3( 28.235969727509655, 291.968154568372,27.025683967396617)])
 
 const geometry = new THREE.TubeGeometry( curveRoadNo2, 64, 0.02, 8, false );
 const material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
@@ -52,34 +52,34 @@ scene.add( mesh );
 
 //WIRE 2
 
-curveRoadNo3 = new THREE.CatmullRomCurve3([
-  new THREE.Vector3( -20, 6, 0.25 ),
-  new THREE.Vector3( -5, 5, 0.25 ),new THREE.Vector3( 5, 5,0.25 ),new THREE.Vector3( 20, 6,0.25)])
+// curveRoadNo3 = new THREE.CatmullRomCurve3([
+//   new THREE.Vector3( -20, 6, 0.25 ),
+//   new THREE.Vector3( -5, 5, 0.25 ),new THREE.Vector3( 5, 5,0.25 ),new THREE.Vector3( 20, 6,0.25)])
 
-const geometry3 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
-const material3= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-const mesh2 = new THREE.Mesh( geometry3, material3 );
-scene.add( mesh2 );
+// const geometry3 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
+// const material3= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+// const mesh2 = new THREE.Mesh( geometry3, material3 );
+// scene.add( mesh2 );
 
 //WIRE 3
-curveRoadNo3 = new THREE.CatmullRomCurve3([
-  new THREE.Vector3( -20, 6, -0.25 ),
-  new THREE.Vector3( -5, 5, -0.25 ),new THREE.Vector3( 5, 5,-0.25 ),new THREE.Vector3( 20, 6,-0.25)])
+// curveRoadNo3 = new THREE.CatmullRomCurve3([
+//   new THREE.Vector3( -20, 6, -0.25 ),
+//   new THREE.Vector3( -5, 5, -0.25 ),new THREE.Vector3( 5, 5,-0.25 ),new THREE.Vector3( 20, 6,-0.25)])
 
-const geometry4 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
-const material4= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-const mesh3 = new THREE.Mesh( geometry4, material4 );
-scene.add( mesh3 );
+// const geometry4 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
+// const material4= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+// const mesh3 = new THREE.Mesh( geometry4, material4 );
+// scene.add( mesh3 );
 
 //WIRE 4
-curveRoadNo3 = new THREE.CatmullRomCurve3([
-  new THREE.Vector3( -20, 6, -0.5 ),
-  new THREE.Vector3( -5, 5, -0.5 ),new THREE.Vector3( 5, 5,-0.5 ),new THREE.Vector3( 20, 6,-0.5)])
+// curveRoadNo3 = new THREE.CatmullRomCurve3([
+//   new THREE.Vector3( -20, 6, -0.5 ),
+//   new THREE.Vector3( -5, 5, -0.5 ),new THREE.Vector3( 5, 5,-0.5 ),new THREE.Vector3( 20, 6,-0.5)])
 
-const geometry5 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
-const material5= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-const mesh4 = new THREE.Mesh( geometry5, material5 );
-scene.add( mesh4 );
+// const geometry5 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
+// const material5= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+// const mesh4 = new THREE.Mesh( geometry5, material5 );
+// scene.add( mesh4 );
 
 renderer.render( scene, camera );
 		</script>
